@@ -10,24 +10,30 @@ import android.widget.Toast;
 
 public class PlayButton extends ImageButton implements OnClickListener, OnLongClickListener {
 
+	private static PlayButton mThis;
+	
     public PlayButton(final Context context, final AttributeSet attrs) {
         super(context, attrs);
         setOnClickListener(this);
         setOnLongClickListener(this);
+        mThis = this;
+        enableButton();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onClick(final View v) {
     	if (!PlayerActivity.isPlaying()) {
-    		PlayerActivity.getThis().startPlaying();
+    		if (PlayerActivity.isPrepared()) {
+    			PlayerActivity.getThis().resumePlaying();
+    		}
+    		else {
+    			PlayerActivity.getThis().startPlaying();
+    		}
     	}
     	else {
-    		PlayerActivity.getThis().stopPlaying();
+    		PlayerActivity.getThis().pausePlaying();
+    		iconPlay();
     	}
-        updateState();
     }
 
     @Override
@@ -36,18 +42,25 @@ public class PlayButton extends ImageButton implements OnClickListener, OnLongCl
         return true;
     }
     
+    public static PlayButton getThis() {
+    	return mThis;
+    }
+    
     public void enableButton() {
     	setEnabled(true);
     }
-
-    public void updateState() {
-        if (PlayerActivity.isPlaying()) {
-            setContentDescription("Pause");
-            setImageResource(R.drawable.btn_playback_pause);
-        } else {
-            setContentDescription("Play");
-            setImageResource(R.drawable.btn_playback_play);
-        }
+    
+    public void disableButton() {
+    	setEnabled(false);
     }
 
+    public void iconPlay() {
+        setContentDescription("Play");
+        setImageResource(R.drawable.btn_playback_play);
+    }
+    
+    public void iconPause() {
+        setContentDescription("Pause");
+        setImageResource(R.drawable.btn_playback_pause);
+    }
 }

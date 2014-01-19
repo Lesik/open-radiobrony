@@ -8,6 +8,7 @@ import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnErrorListener;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 
 public class PlayerActivity extends Activity implements OnErrorListener  {
@@ -17,6 +18,7 @@ public class PlayerActivity extends Activity implements OnErrorListener  {
 	private static PlayerActivity mThis;
 	private static MediaPlayer mediaPlayer;
 	public static final String streamUrl = "http://www.radiobrony.fr:8000/live";
+	public static Handler handler;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,7 @@ public class PlayerActivity extends Activity implements OnErrorListener  {
 		ErrorHandler.checkForError(this);
 		setContentView(R.layout.activity_player);
 		mThis = this;
+		handler = new Handler();
 	}
 
 	@Override
@@ -39,9 +42,12 @@ public class PlayerActivity extends Activity implements OnErrorListener  {
 	
 	public void startPlaying() {
 		mediaPlayer = new MediaPlayer();
+		PlayButton.getThis().disableButton();
+		StopButton.getThis().disableButton();
 		final ProgressDialog progress = new ProgressDialog(this);
     	progress.setTitle("Loading");
     	progress.setMessage("Preparing stream...");
+    	progress.setCancelable(false);
     	progress.show();
 		try {
 			mediaPlayer.setDataSource(streamUrl);
@@ -51,6 +57,9 @@ public class PlayerActivity extends Activity implements OnErrorListener  {
 			    public void onPrepared(MediaPlayer mp) {
 			    	progress.dismiss();
 					mediaPlayer.start();
+			        PlayButton.getThis().iconPause();
+			        PlayButton.getThis().enableButton();
+			        StopButton.getThis().enableButton();
 					isPrepared = true;
 					isPlaying = true;
 			    }
@@ -75,16 +84,35 @@ public class PlayerActivity extends Activity implements OnErrorListener  {
 		return isPlaying;
 	}
 	
+	public static boolean isPrepared() {
+		return isPrepared;
+	}
+	
+	public void resumePlaying() {
+		mediaPlayer.start();
+        PlayButton.getThis().iconPause();
+		isPrepared = true;
+		isPlaying = true;
+	}
+	
+	public void pausePlaying() {
+		if (isPrepared) {
+			mediaPlayer.pause();
+			isPlaying = false;
+		}
+	}
+	
 	public void stopPlaying() {
 		if (isPrepared) {
 			mediaPlayer.stop();
+			PlayButton.getThis().iconPlay();
 			isPlaying = false;
+			isPrepared = false;
 		}
 	}
 
 	@Override
 	public boolean onError(MediaPlayer mp, int what, int extra) {
-		
 		return false;
 	}
 	

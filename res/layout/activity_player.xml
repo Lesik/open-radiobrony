@@ -1,199 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  Copyright (C) 2012 Andrew Neal
--->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+        android:orientation="vertical" >
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res/com.andrew.apollo"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
-    <RelativeLayout
+	<LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical" >
 
-        <View
-            android:id="@+id/audio_player_footer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignTop="@android:id/progress" />
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal"
+            android:text="RadioBrony"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <LinearLayout
-            android:id="@+id/audio_player_header"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_alignParentTop="true"
-            android:baselineAligned="false"
-            android:orientation="horizontal" >
+    </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp" >
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/audio_player_track_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:singleLine="true"
-                    android:textSize="16dp"
-                    android:textStyle="bold" />
+		<RelativeLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:orientation="vertical" >
 
-                <TextView
-                    android:id="@+id/audio_player_artist_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:singleLine="true"
-                    android:textSize="16dp" />
-            </LinearLayout>
-
-            <FrameLayout
-                android:id="@+id/audio_player_switch"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:clickable="true"
-                android:focusable="true"
-                android:padding="10dp" >
-
-                <ImageView
-                    android:id="@+id/audio_player_switch_queue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:contentDescription="@null" />
-
-                <ImageView
-                    android:id="@+id/audio_player_switch_album_art"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:visibility="invisible" />
-            </FrameLayout>
-        </LinearLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@android:id/progress"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/audio_player_header" >
-
-            <ImageView
-                android:id="@+id/audio_player_album_art"
+		    <com.lesikapk.openradiobrony.SquareImageView
+                android:id="@+id/album_art"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerHorizontal="true"
-                android:scaleType="center"
-                android:src="@drawable/radiobrony_cover" />
+                android:scaleType="centerCrop"
+		        android:src="@drawable/bgr" />
 
-            <View
-                android:id="@+id/audio_player_footer_two"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_below="@+id/audio_player_album_art" />
+		    <ImageView
+		        android:id="@+id/imageView2"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:src="@drawable/radiobrony_cover" />
+		    
+		</RelativeLayout>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:layout_alignTop="@+id/audio_player_album_art"
-                android:contentDescription="@null"
-                android:src="@drawable/top_shadow" />
+	</LinearLayout>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:layout_alignBottom="@+id/audio_player_album_art"
-                android:contentDescription="@null"
-                android:src="@drawable/bottom_shadow" />
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical" >
 
-            <FrameLayout
-                android:id="@+id/audio_player_pager_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/audio_player_album_art"
-                android:visibility="invisible" >
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" >
 
-                <android.support.v4.view.ViewPager
-                    android:id="@+id/audio_player_pager"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+	        <com.lesikapk.openradiobrony.PlayButton
+	            android:id="@+id/playButton"
+	            android:layout_width="40dp"
+	            android:layout_height="40dp"
+	            android:layout_margin="10dp"
+	            android:background="@null"
+	            android:src="@drawable/btn_playback_play" />
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp"
-                    android:layout_gravity="top"
-                    android:contentDescription="@null"
-                    android:src="@drawable/top_shadow" />
+	        <SeekBar
+	            android:id="@+id/seekBar1"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center"
+	            android:layout_margin="10dp"
+	            android:layout_weight="1" />
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp"
-                    android:layout_gravity="bottom"
-                    android:contentDescription="@null"
-                    android:src="@drawable/bottom_shadow" />
-            </FrameLayout>
-        </RelativeLayout>
+	        <com.lesikapk.openradiobrony.StopButton
+	            android:id="@+id/stopButton"
+	            android:layout_width="40dp"
+	            android:layout_height="40dp"
+	            android:layout_margin="10dp"
+	            android:background="@null"
+	            android:src="@drawable/btn_playback_stop" />
 
-        <TextView
-            android:id="@+id/audio_player_current_time"
-            android:layout_width="52dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@android:id/progress"
-            android:layout_alignParentLeft="true"
-            android:layout_alignTop="@android:id/progress"
-            android:gravity="center"
-            android:textSize="12sp" />
+	    </LinearLayout>
 
-        <TextView
-            android:id="@+id/audio_player_total_time"
-            android:layout_width="52dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@android:id/progress"
-            android:layout_alignParentRight="true"
-            android:layout_alignTop="@android:id/progress"
-            android:gravity="center"
-            android:textSize="12sp" />
+	</LinearLayout>
 
-        <SeekBar
-            android:id="@android:id/progress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/audio_player_controlss"
-            android:layout_marginBottom="2dp"
-            android:layout_toLeftOf="@+id/audio_player_total_time"
-            android:layout_toRightOf="@+id/audio_player_current_time"
-            android:max="1000"
-            android:thumb="@null" />
-
-        <LinearLayout
-            android:id="@+id/audio_player_controlss"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:baselineAligned="false"
-            android:gravity="center" >
-
-		<com.lesikapk.openradiobrony.PlayButton
-            android:id="@+id/action_button_play"
-            android:layout_width="58dp"
-            android:layout_height="58dp"
-            android:layout_gravity="center"
-            android:contentDescription="accessibility_play"
-            android:focusable="true"
-            android:scaleType="centerInside"
-            android:src="@drawable/btn_playback_play" />
-		
-        </LinearLayout>
-    </RelativeLayout>
-
-</FrameLayout>
+</LinearLayout>
