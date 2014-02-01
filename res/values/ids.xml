@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<item type="id" name="music_title" />
+	<item type="id" name="music_artist" />
+	<item type="id" name="music_cover" />
+	<item type="id" name="playpause_button" />
+	<item type="id" name="stop_button" />
+</resources>

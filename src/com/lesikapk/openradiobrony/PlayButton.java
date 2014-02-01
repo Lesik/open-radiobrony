@@ -5,10 +5,10 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.Toast;
 
-public class PlayButton extends ImageButton implements OnClickListener, OnLongClickListener {
+public class PlayButton extends Button implements OnClickListener, OnLongClickListener {
 
 	private static PlayButton mThis;
 	
@@ -56,11 +56,11 @@ public class PlayButton extends ImageButton implements OnClickListener, OnLongCl
 
     public void iconPlay() {
         setContentDescription("Play");
-        setImageResource(R.drawable.btn_playback_play);
+//        setImageResource(R.drawable.btn_playback_play);
     }
     
     public void iconPause() {
         setContentDescription("Pause");
-        setImageResource(R.drawable.btn_playback_pause);
+//        setImageResource(R.drawable.btn_playback_pause);
     }
 }

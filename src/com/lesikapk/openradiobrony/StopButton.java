@@ -5,10 +5,10 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.Toast;
 
-public class StopButton extends ImageButton implements OnClickListener, OnLongClickListener {
+public class StopButton extends Button implements OnClickListener, OnLongClickListener {
 
 	private static StopButton mThis;
 	

@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">open-radiobrony</string>
+    <string name="app_name">RadioBrony</string>
+    <string name="app_author_name">Lesik Pidgornyy (Developer)</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-
+    
+    <string name="music_title_default">Unknown title</string>
+	<string name="music_artist_default">Unknown artist</string>
+    <string name="btn_playpause_default">Play</string>
+    <string name="btn_playpause_pause">Pause</string>
+    <string name="btn_stop">Stop</string>
+    
 </resources>
