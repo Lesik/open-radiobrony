@@ -9,7 +9,7 @@
     tools:ignore="ContentDescription" >
 
     <ImageView
-        android:id="@+id/notification_base_image"
+        android:id="@id/notification_cover"
         android:layout_width="@dimen/notification_big_icon_width"
         android:layout_height="@dimen/notification_big_icon_height"
         android:background="@drawable/cover"

@@ -8,8 +8,14 @@
     
     <string name="music_title_default">Unknown title</string>
 	<string name="music_artist_default">Unknown artist</string>
-    <string name="btn_playpause_default">Play</string>
+	<string name="btn_playpause_play">Play</string>
     <string name="btn_playpause_pause">Pause</string>
     <string name="btn_stop">Stop</string>
+
+    <string name="music_volume">Volume</string>
     
+    <string name="notific_title">Unknown title</string>
+    <string name="notific_artist">Unknown artist</string>
+    <string name="notific_lolza"></string>
+    <string name="notific_1234a"></string>
 </resources>

@@ -2,9 +2,11 @@ package com.lesikapk.openradiobrony;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -17,7 +19,6 @@ public class PlayButton extends Button implements OnClickListener, OnLongClickLi
         setOnClickListener(this);
         setOnLongClickListener(this);
         mThis = this;
-        enableButton();
     }
 
     @Override
@@ -46,21 +47,17 @@ public class PlayButton extends Button implements OnClickListener, OnLongClickLi
     	return mThis;
     }
     
-    public void enableButton() {
-    	setEnabled(true);
-    }
-    
-    public void disableButton() {
-    	setEnabled(false);
-    }
-
     public void iconPlay() {
-        setContentDescription("Play");
+    	setText(getResources().getString(R.string.btn_playpause_play));
+        setContentDescription(getResources().getString(R.string.btn_playpause_play));
+        setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.btn_playback_play), null, null, null);
 //        setImageResource(R.drawable.btn_playback_play);
     }
     
     public void iconPause() {
-        setContentDescription("Pause");
+    	setText(getResources().getString(R.string.btn_playpause_pause));
+        setContentDescription(getResources().getString(R.string.btn_playpause_pause));
+        setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.btn_playback_pause), null, null, null);
 //        setImageResource(R.drawable.btn_playback_pause);
     }
 }

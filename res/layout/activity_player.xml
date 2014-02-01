@@ -5,19 +5,25 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
+
+            <include
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout="@layout/header" />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="15dp"
             android:background="@drawable/card_bg"
             android:orientation="vertical" >
             
@@ -71,7 +77,7 @@
 		        android:visibility="visible"
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
-		        android:text="@string/btn_playpause_default"
+		        android:text="@string/btn_playpause_play"
 		        android:drawableLeft="@drawable/btn_playback_play"
 		        android:gravity="center_vertical|center_horizontal|left"
 		        style="@style/CardActionButtonWithIconNoTopDivider" />
@@ -85,6 +91,35 @@
 		        android:gravity="center_vertical|center_horizontal|left"
 		        style="@style/CardActionButtonWithIcon" />
             
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical" >
+		    
+            <TextView
+		        android:text="@string/music_volume"
+		        android:paddingLeft="@dimen/text_block_side_padding"
+		        android:paddingTop="@dimen/text_block_top_padding"
+		        android:paddingRight="@dimen/text_block_side_padding"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:textAlignment="viewStart"
+		        android:paddingStart="@dimen/text_block_side_padding"
+		        android:paddingEnd="@dimen/text_block_side_padding"
+		        style="@style/CardTitle" />
+            
+			<SeekBar
+			    android:id="@id/volume_seekbar"
+			    android:layout_width="match_parent"
+			    android:layout_height="match_parent"
+			    android:layout_margin="10dp" />
+        
         </LinearLayout>
 
     </LinearLayout>

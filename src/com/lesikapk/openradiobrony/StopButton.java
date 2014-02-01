@@ -17,7 +17,6 @@ public class StopButton extends Button implements OnClickListener, OnLongClickLi
         setOnClickListener(this);
         setOnLongClickListener(this);
         mThis = this;
-        disableButton();
     }
 
     @Override
@@ -35,13 +34,5 @@ public class StopButton extends Button implements OnClickListener, OnLongClickLi
     
     public static StopButton getThis() {
     	return mThis;
-    }
-    
-    public void enableButton() {
-    	setEnabled(true);
-    }
-    
-    public void disableButton() {
-    	setEnabled(false);
     }
 }

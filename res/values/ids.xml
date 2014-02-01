@@ -5,4 +5,9 @@
 	<item type="id" name="music_cover" />
 	<item type="id" name="playpause_button" />
 	<item type="id" name="stop_button" />
+	<item type="id" name="volume_seekbar" />
+	
+	<item type="id" name="notification_title" />
+	<item type="id" name="notification_artist" />
+	<item type="id" name="notification_cover" />
 </resources>

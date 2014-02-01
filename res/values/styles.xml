@@ -4,7 +4,7 @@
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
-    <style name="AppBaseTheme" parent="android:Theme">
+    <style name="AppBaseTheme" parent="android:Theme.NoTitleBar">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
@@ -68,7 +68,7 @@
     
     <style name="CardActionButton">
         <item name="android:textSize">@dimen/card_action_text</item>
-        <item name="android:textColor">#B0b0b0</item>
+        <item name="android:textColor">@color/color_card_link_text</item>
         <item name="android:ellipsize">end</item>
         <item name="android:gravity">start|center</item>
         <item name="android:background">@drawable/card_action_button_background</item>
