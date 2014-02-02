@@ -5,17 +5,29 @@
     <string name="app_author_name">Lesik Pidgornyy (Developer)</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    
     <string name="music_title_default">Unknown title</string>
-	<string name="music_artist_default">Unknown artist</string>
-	<string name="btn_playpause_play">Play</string>
+    <string name="music_artist_default">Unknown artist</string>
+    <string name="btn_playpause_play">Play</string>
     <string name="btn_playpause_pause">Pause</string>
     <string name="btn_stop">Stop</string>
-
     <string name="music_volume">Volume</string>
-    
+    <string name="nojson">Can\'t get track info: Error parsing JSON</string>
+    <string name="nojson_descr">Update the app or contact the developer</string>
     <string name="notific_title">Unknown title</string>
     <string name="notific_artist">Unknown artist</string>
-    <string name="notific_lolza"></string>
-    <string name="notific_1234a"></string>
+    <string name="notific_listeners">listeners</string>
+    <string name="notific_noconnection">Internet connection lost</string>
+    <string name="notific_noconnection_descr">There has been a problem connecting to the internet</string>
+    <string name="title_activity_error">ErrorActivity</string>
+    
+    <string name="error_title">No connection!</string>
+    <string name="error_descr">Unfortunately, we couldn\'t connect to radiobrony.fr. This could have a lot of possible reasons.
+        \nIn case it\'s your fault, please check your connection and try again.</string>
+    <string name="error_descr_dialog">We just checked - you still aren\'t connected to the internet!
+        \nThe reason could be one of the following:
+        \n- radiobrony.fr is currently down or busy
+        \n- you are not connected to the internet
+        \n- you access the internet via a bad or not configured proxy</string>
+    <string name="btn_retry">Retry</string>
+
 </resources>

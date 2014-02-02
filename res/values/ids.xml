@@ -7,6 +7,11 @@
 	<item type="id" name="stop_button" />
 	<item type="id" name="volume_seekbar" />
 	
+	<item type="id" name="error_title"></item>
+	<item type="id" name="error_descr"></item>
+	<item type="id" name="error_image"></item>
+	<item type="id" name="retry_button"></item>
+	
 	<item type="id" name="notification_title" />
 	<item type="id" name="notification_artist" />
 	<item type="id" name="notification_cover" />

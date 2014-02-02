@@ -21,7 +21,7 @@ public class StopButton extends Button implements OnClickListener, OnLongClickLi
 
     @Override
     public void onClick(final View v) {
-		if(PlayerActivity.isPrepared() && PlayerActivity.isPlaying()) {
+		if(PlayerActivity.isPrepared()) {
     			PlayerActivity.getThis().stopPlaying();
     	}
     }
